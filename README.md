@@ -19,7 +19,7 @@ Predicting **Child Meal (CHML)** demand for Emirates flights departing Scotland 
 - Used for: Understanding patterns, informing synthetic data design
 
 ### Synthetic Data (this project)
-- Generated in `Project.ipynb`
+- Generated in `Fake Data Generator.ipynb`
 - **Routes:** GLA-DXB (Glasgow), EDI-DXB (Edinburgh)
 - **Period:** 2024-01-01 to 2025-12-31 (2 years, 1,462 records)
 - **Target variable:** `CHML_Ordered` (count)
@@ -45,7 +45,12 @@ Predicting **Child Meal (CHML)** demand for Emirates flights departing Scotland 
 
 ## Modelling Plan
 
-### Phase 1: Baseline (NEXT STEP)
+### Phase 0: Exploratory Data Analysis
+- [ ] Explore synthetic data distribution and patterns
+- [ ] Understand feature relationships
+- [ ] See `EDA_GUIDE.md` for checklist
+
+### Phase 1: Baseline
 - [ ] Linear regression on synthetic data
 - [ ] Features: `Is_Holiday_Period`, `Is_Weekend`, `Route`, `Load_Factor`
 - [ ] Metrics: RMSE, MAE
@@ -67,20 +72,23 @@ Predicting **Child Meal (CHML)** demand for Emirates flights departing Scotland 
 
 | File | Purpose |
 |------|---------|
-| `Project.ipynb` | Synthetic data generation, exploration, modelling |
-| `CHML_Data.ipynb` | Exploratory analysis of real data (reference only) |
+| `Fake Data Generator.ipynb` | Generates synthetic CHML demand data |
+| `Data_Exploration.ipynb` | EDA and analysis of synthetic data |
+| `EDA_GUIDE.md` | Step-by-step guide for exploratory data analysis |
+| `CHML_Data.ipynb` | Exploratory analysis of real data (reference only, not for public use) |
 | `README.md` | This file |
 
 ## Next Concrete Step
 
-**Build the linear regression baseline in `Project.ipynb`:**
-1. Regenerate the synthetic dataset (or save to CSV for reproducibility)
-2. Train/test split (80/20 or time-based)
-3. Fit `sklearn.linear_model.LinearRegression`
-4. Evaluate on test set (RMSE, MAE)
-5. Plot predicted vs actual
+**Complete the EDA in `Data_Exploration.ipynb`:**
+1. Follow the checklist in `EDA_GUIDE.md`
+2. Understand the target distribution
+3. Identify which features matter most
+4. Document findings
+
+**Then:** Build the linear regression baseline.
 
 ---
 
-*Last updated: 2025-01-28*
-*Status: Synthetic data complete. Modelling not started.*
+*Last updated: 2026-01-29*  
+*Status: Synthetic data complete. EDA in progress.*
